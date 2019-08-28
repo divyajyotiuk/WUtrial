@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WUtrial</string>
+    <string name="pass">Enter Password</string>
+    <string name="cpass">Password do not match</string>
+    <string name="pinerr">Enter Pin</string>
+    <string name="cpinerr">pin do not match</string>
+    <string name="iderr">Enetr id no</string>
 </resources>
