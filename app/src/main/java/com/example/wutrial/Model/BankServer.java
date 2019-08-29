@@ -1,4 +1,4 @@
-package com.example.wutrial;
+package com.example.wutrial.Model;
 
 public class BankServer {
 

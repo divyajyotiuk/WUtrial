@@ -37,6 +37,8 @@
         android:layout_marginBottom="100dp"
         android:text="KYC"
         android:textSize="22sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"

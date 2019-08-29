@@ -5,46 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SetPaymentPinActivity"
-    >
+    tools:context=".PasscodeActivity">
 
     <TextView
-        android:layout_width="215dp"
-        android:layout_height="48dp"
-        android:paddingTop="10dp"
-        android:text="Set Paymentpin :"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
-
-
-    <com.alimuzaffar.lib.pin.PinEntryEditText
-        android:id="@+id/paypin"
-
-        android:layout_width="363dp"
-        android:layout_height="74dp"
-        android:cursorVisible="false"
-        android:digits="1234567890"
-        android:inputType="numberPassword"
-        android:maxLength="6"
-        android:textIsSelectable="false"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227"
-        app:pinAnimationType="popIn" />
-
-    <TextView
-        android:layout_width="228dp"
-        android:layout_height="50dp"
+        android:layout_width="213dp"
+        android:layout_height="43dp"
         android:layout_marginStart="4dp"
         android:paddingTop="10dp"
-        android:text="Confirm PaymentPin :"
+        android:text="Enter passcode :"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,14 +20,13 @@
         app:layout_constraintVertical_bias="0.367" />
 
     <com.alimuzaffar.lib.pin.PinEntryEditText
-        android:id="@+id/confirm_pin"
-
-        android:layout_width="368dp"
-        android:layout_height="71dp"
+        android:id="@+id/passcode_login"
+        android:layout_width="328dp"
+        android:layout_height="69dp"
         android:cursorVisible="false"
         android:digits="1234567890"
         android:inputType="numberPassword"
-        android:maxLength="6"
+        android:maxLength="4"
         android:textIsSelectable="false"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,13 +41,12 @@
         android:layout_width="206dp"
         android:layout_height="60dp"
         android:layout_marginBottom="168dp"
-        android:textSize="20sp"
-        android:text="Done"
         android:background="@color/colorPrimaryDark"
+        android:text="Login"
         android:textColor="@color/colorAccent"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent" />
-
 </LinearLayout>

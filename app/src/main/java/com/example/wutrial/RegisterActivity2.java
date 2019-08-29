@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,6 +11,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.wutrial.Model.BankServer;
+import com.example.wutrial.Model.Banklist;
+import com.example.wutrial.Model.Idprooflist;
+import com.example.wutrial.Model.User;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -139,7 +142,7 @@ public class RegisterActivity2 extends AppCompatActivity {
 
                 writeNewUser(uid);
 
-                startActivity(new Intent(RegisterActivity2.this,SetPasscode.class));
+                startActivity(new Intent(RegisterActivity2.this, SetPasscodeActivity.class));
             }
         });
 

@@ -1,4 +1,4 @@
-package com.example.wutrial;
+package com.example.wutrial.Model;
 
 import android.view.View;
 import android.widget.AdapterView;

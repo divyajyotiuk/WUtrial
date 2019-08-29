@@ -5,28 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SetPasscode">
+    tools:context=".SetPasscodeActivity">
 
 
     <TextView
-        android:layout_width="142dp"
-        android:layout_height="43dp"
+        android:layout_width="217dp"
+        android:layout_height="56dp"
         android:paddingTop="10dp"
         android:text="Set Passcode :"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235"
-        />
+        app:layout_constraintVertical_bias="0.235" />
 
 
     <com.alimuzaffar.lib.pin.PinEntryEditText
         android:id="@+id/password"
 
-        android:layout_width="311dp"
-        android:layout_height="40dp"
+        android:layout_width="328dp"
+        android:layout_height="71dp"
         android:cursorVisible="false"
         android:digits="1234567890"
         android:inputType="numberPassword"
@@ -41,12 +40,12 @@
         app:pinAnimationType="popIn" />
 
     <TextView
-        android:layout_width="142dp"
+        android:layout_width="237dp"
         android:layout_height="43dp"
         android:layout_marginStart="4dp"
         android:paddingTop="10dp"
-        android:text="confirm passcode :"
-        android:textSize="15sp"
+        android:text="Confirm Passcode :"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -55,8 +54,8 @@
     <com.alimuzaffar.lib.pin.PinEntryEditText
         android:id="@+id/confirm"
 
-        android:layout_width="311dp"
-        android:layout_height="40dp"
+        android:layout_width="334dp"
+        android:layout_height="73dp"
         android:cursorVisible="false"
         android:digits="1234567890"
         android:inputType="numberPassword"
@@ -72,10 +71,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="206dp"
-        android:layout_height="60dp"
+        android:layout_width="230dp"
+        android:layout_height="62dp"
         android:layout_marginBottom="168dp"
+        android:background="@color/colorPrimaryDark"
         android:text="Set Passcode"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"

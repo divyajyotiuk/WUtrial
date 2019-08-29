@@ -1,4 +1,4 @@
-package com.example.wutrial;
+package com.example.wutrial.Model;
 
 import com.google.firebase.database.Exclude;
 
@@ -13,7 +13,8 @@ public class User implements Serializable {
     private String currency;
     private String idProofNo, idProofName, userID, bankName, fullName;
     private boolean kyc, linkedStatus;
-    private int walletBalance,loginPass, paymentPin;
+    private int loginPass, paymentPin;
+    private Double walletBalance;
 
     //change loginpass and pin to hash
 
@@ -102,11 +103,11 @@ public class User implements Serializable {
         this.linkedStatus = linkedStatus;
     }
 
-    public int getWalletBalance() {
+    public Double getWalletBalance() {
         return walletBalance;
     }
 
-    public void setWalletBalance(int walletBalance) {
+    public void setWalletBalance(Double walletBalance) {
         this.walletBalance = walletBalance;
     }
 
@@ -133,7 +134,7 @@ public class User implements Serializable {
         this.phoneNo = ph;
         this.country = country;
         this.currency=currency;
-        walletBalance =0;
+        walletBalance =0.0;
         loginPass=0;
         paymentPin =0;
         kyc = true;

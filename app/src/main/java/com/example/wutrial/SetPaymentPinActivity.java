@@ -2,7 +2,6 @@ package com.example.wutrial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SetPaymentPin extends AppCompatActivity {
+public class SetPaymentPinActivity extends AppCompatActivity {
 
     private EditText paypin,confirm_pin;
     private Button button;
@@ -49,8 +48,8 @@ public class SetPaymentPin extends AppCompatActivity {
 
             String regexPassword = "[0-9]+";
 
-            awesomeValidation.addValidation(SetPaymentPin.this, R.id.paypin, regexPassword, R.string.pinerr);
-            awesomeValidation.addValidation(SetPaymentPin.this, R.id.confirm_pin, R.id.paypin, R.string.cpinerr);
+            awesomeValidation.addValidation(SetPaymentPinActivity.this, R.id.paypin, regexPassword, R.string.pinerr);
+            awesomeValidation.addValidation(SetPaymentPinActivity.this, R.id.confirm_pin, R.id.paypin, R.string.cpinerr);
 
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -59,13 +58,13 @@ public class SetPaymentPin extends AppCompatActivity {
                     if (awesomeValidation.validate()) {
 
                         int paymentpin = Integer.parseInt(paypin.getText().toString());
-                        Toast.makeText(SetPaymentPin.this, "Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SetPaymentPinActivity.this, "Success", Toast.LENGTH_SHORT).show();
 
                         mDatabase.child("paymentPin").setValue(paymentpin);
-                      //  Intent intent = new Intent(SetPaymentPin.this, passcode.class);
+                      //  Intent intent = new Intent(SetPaymentPinActivity.this, passcode.class);
                       //  startActivity(intent);
                     } else {
-                        Toast.makeText(SetPaymentPin.this, "Fail", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SetPaymentPinActivity.this, "Fail", Toast.LENGTH_SHORT).show();
                     }
 
                 }

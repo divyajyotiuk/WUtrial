@@ -115,19 +115,19 @@ public class RegisterActivity1 extends AppCompatActivity{
 
 //
 //    //for redirecting to main activity after registration
-//    private void onAuthSuccess(FirebaseUser user) {
-//
-//        startActivity(new Intent(RegisterActivity1.this, MainActivity.class));
-//        finish();
-//    }
-//
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//
-//        // Check auth on Activity start
-//        if (auth.getCurrentUser() != null) {
-//            onAuthSuccess(auth.getCurrentUser());
-//        }
-//    }
+    private void onAuthSuccess(FirebaseUser user) {
+
+        startActivity(new Intent(RegisterActivity1.this, PasscodeActivity.class));
+        finish();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // Check auth on Activity start
+        if (auth.getCurrentUser() != null) {
+            onAuthSuccess(auth.getCurrentUser());
+        }
+    }
 }

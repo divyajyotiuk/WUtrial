@@ -1,8 +1,15 @@
 <resources>
-    <string name="app_name">WUtrial</string>
+    <string name="app_name">WU App</string>
     <string name="pass">Enter Password</string>
     <string name="cpass">Password do not match</string>
     <string name="pinerr">Enter Pin</string>
     <string name="cpinerr">pin do not match</string>
-    <string name="iderr">Enetr id no</string>
+    <string name="iderr">Enter id no</string>
+    <string name="currency_prompt">Currency</string>
+
+    <string-array name="currency">
+        <item>Rupees</item>
+        <item>Dollar</item>
+        <item>Yen</item>
+    </string-array>
 </resources>
