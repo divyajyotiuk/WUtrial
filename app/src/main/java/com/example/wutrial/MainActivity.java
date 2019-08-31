@@ -135,9 +135,6 @@ public class MainActivity extends AppCompatActivity implements LogOutTimerUtil.L
       //  Log.e(TAG, "onResume()");
     }
 
-    /**
-     * Performing idle time logout
-     */
     @Override
     public void doLogout() {
         // write your stuff here
