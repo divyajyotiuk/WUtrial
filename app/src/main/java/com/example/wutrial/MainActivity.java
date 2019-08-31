@@ -1,7 +1,10 @@
 package com.example.wutrial;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -37,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements LogOutTimerUtil.L
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         auth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference("WUAccount").child(auth.getUid());

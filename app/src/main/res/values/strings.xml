@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WU App</string>
+    <string name="app_name">Western Union</string>
     <string name="pass">Enter Password</string>
     <string name="cpass">Password do not match</string>
     <string name="pinerr">Enter Pin</string>

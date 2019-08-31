@@ -2,7 +2,10 @@ package com.example.wutrial;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -46,6 +49,11 @@ public class SendMoneyActivity extends Activity implements LogOutTimerUtil.LogOu
 
     private EditText id, sendMoney;
     private Button sendBtn;
+
+    private static final int RESULT_PICK_CONTACT = 1;
+    private Button select;
+    private EditText number;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,6 +185,20 @@ public class SendMoneyActivity extends Activity implements LogOutTimerUtil.LogOu
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         currencySpinner.setAdapter(myAdapter);
 
+        //////////////////contacts/////////////////////////
+        select = (Button) findViewById(R.id.contacts);
+        number = findViewById(R.id.enter_id);
+
+        select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+                startActivityForResult(intent, RESULT_PICK_CONTACT);
+
+            }
+        });
+        ///////////////////////////////////////////////
     }
 
     public Task<String> callCloudFunction(){
@@ -262,5 +284,42 @@ public class SendMoneyActivity extends Activity implements LogOutTimerUtil.LogOu
         
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    @Override
+    public void onActivityResult(int RequestCode, int ResultCode, Intent data) {
+
+        if (ResultCode == RESULT_OK) {
+
+            switch (RequestCode) {
+                case RESULT_PICK_CONTACT:
+                    contactPicked(data);
+                    break;
+            }
+
+        }
+        else
+        {
+            Toast.makeText(this,"Failed tp pick contact",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void contactPicked(Intent data) {
+        Cursor cursor;
+        try
+        {
+            String phonum = null;
+            Uri uri =data.getData();
+            cursor=getContentResolver().query(uri,null,null,null,null);
+            cursor.moveToFirst();
+            int phoneIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+            phonum=cursor.getString(phoneIndex);
+            number.setText(phonum);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
