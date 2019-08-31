@@ -31,10 +31,10 @@ import java.util.Locale;
 public class RegisterActivity2 extends AppCompatActivity {
 
     FirebaseAuth auth;
-
-    private FirebaseDatabase secondaryDatabase;
-    private DatabaseReference secondaryRef;
+    public FirebaseDatabase secondaryDatabase;
+    public DatabaseReference secondaryRef;
     private DatabaseReference mDatabase;
+
     private String country,phone,countryCode;
     private EditText idproofNo;
     private Spinner idproofSpinner, bankSpinner;

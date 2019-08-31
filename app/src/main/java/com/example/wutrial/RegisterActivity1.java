@@ -38,7 +38,6 @@ public class RegisterActivity1 extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity_1);
 
-
         ph = (EditText)findViewById(R.id.phone_no);
         otp = (EditText)findViewById(R.id.id_otp);
         ccp = (CountryCodePicker) findViewById(R.id.ccp);
@@ -117,17 +116,33 @@ public class RegisterActivity1 extends AppCompatActivity{
 //    //for redirecting to main activity after registration
     private void onAuthSuccess(FirebaseUser user) {
 
-        startActivity(new Intent(RegisterActivity1.this, PasscodeActivity.class));
-        finish();
+        Toast.makeText(getApplicationContext(),auth.getUid(),Toast.LENGTH_SHORT).show();
+      //  startActivity(new Intent(RegisterActivity1.this, PasscodeActivity.class));
+       // finish();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-
         // Check auth on Activity start
-        if (auth.getCurrentUser() != null) {
-            onAuthSuccess(auth.getCurrentUser());
-        }
+
+       FirebaseAuth.AuthStateListener mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                  //  Toast.makeText(getApplicationContext(),auth.getUid(),Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity1.this, PasscodeActivity.class));
+                    finish();
+                    // Sign in logic here.
+                }
+            }
+        };
+
+       mAuthListener.onAuthStateChanged(auth);
+
+//        if (auth.getCurrentUser() != null) {
+//            onAuthSuccess(auth.getCurrentUser());
+//        }
     }
 }

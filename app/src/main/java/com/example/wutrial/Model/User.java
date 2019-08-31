@@ -148,27 +148,6 @@ public class User implements Serializable {
 
 
 
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-
-        result.put("idProofName", idProofName);
-        result.put("idProofNo", idProofNo);
-        result.put("kyc",true);
-        result.put("linkedStatus",true);
-        result.put("country", country);
-        result.put("phoneNo", phoneNo);
-        result.put("userID", userID);
-        result.put("bankName",bankName);
-        result.put("walletBalance", walletBalance);
-        result.put("loginPass",loginPass);
-        result.put("paymentPin", paymentPin);
-        result.put("fullName", fullName);
-
-        return result;
-    }
-
-
 
 }
 

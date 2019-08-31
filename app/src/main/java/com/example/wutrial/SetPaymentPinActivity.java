@@ -2,6 +2,7 @@ package com.example.wutrial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,8 +62,8 @@ public class SetPaymentPinActivity extends AppCompatActivity {
                         Toast.makeText(SetPaymentPinActivity.this, "Success", Toast.LENGTH_SHORT).show();
 
                         mDatabase.child("paymentPin").setValue(paymentpin);
-                      //  Intent intent = new Intent(SetPaymentPinActivity.this, passcode.class);
-                      //  startActivity(intent);
+                        Intent intent = new Intent(SetPaymentPinActivity.this, PasscodeActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(SetPaymentPinActivity.this, "Fail", Toast.LENGTH_SHORT).show();
                     }

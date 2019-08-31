@@ -34,7 +34,7 @@
         android:layout_height="5dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/enter_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="15"
@@ -56,7 +56,7 @@
         android:layout_height="5dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/conversion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="20"
@@ -78,18 +78,18 @@
         android:layout_height="5dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/enter_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="20"
-        android:inputType="number" />
+        android:inputType="text" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp" />
 
     <Button
-        android:id="@+id/finalSendButton"
+        android:id="@+id/sendButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"

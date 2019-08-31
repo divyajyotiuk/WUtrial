@@ -2,7 +2,8 @@ package com.example.wutrial.Model;
 
 public class BankServer {
 
-    private int accountNo, balance;
+    private int accountNo;
+    private Double balance;
     private String bankName,phoneNo, name, emailID;
 
     public BankServer(){
@@ -17,11 +18,11 @@ public class BankServer {
         this.accountNo = accountNo;
     }
 
-    public int getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
